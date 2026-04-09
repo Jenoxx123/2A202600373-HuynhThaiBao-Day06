@@ -8,11 +8,8 @@ Test speech to text model. Phụ thiết kế flow chatbot.
 - Viết và test các test case cho speech to text model.
 
 ## 3. SPEC mạnh/yếu
-- Mạnh nhất: failure modes — nhóm nghĩ ra được case "triệu chứng chung chung"
-  mà AI gợi ý quá rộng, và có mitigation cụ thể (hỏi thêm câu follow-up)
-- Yếu nhất: ROI — 3 kịch bản thực ra chỉ khác số user, assumption gần giống nhau.
-  Nên tách assumption rõ hơn (VD: conservative = chỉ dùng ở 1 chi nhánh,
-  optimistic = rollout toàn hệ thống)
+Mạnh nhất (Failure Modes): Nhận diện rủi ro khi user cung cấp địa chỉ chung chung (VD: "Đến chợ Bến Thành" nhưng không rõ cổng). Giải pháp: AI tự động hỏi follow-up để chốt tọa độ/vị trí đón chính xác, tránh tài xế hủy cuốc.
+Yếu nhất (ROI): Các kịch bản tài chính hiện chỉ khác nhau về số lượng cuốc xe. Cần tách rõ giả định: Thận trọng (chỉ áp dụng cho khách dùng app) và Lạc quan (thay thế hoàn toàn tổng đài truyền thống bằng AI Voice).
 
 ## 4. Đóng góp khác
 - fix bug hallucination cho model speech to text
